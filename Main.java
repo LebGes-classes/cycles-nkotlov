@@ -1,13 +1,37 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("a\t" + "b\t" + "c\tresult\n\n");
-        for (int a = 0; a <= 1; ++a)
-            for (int b = 0; b <= 1; ++b)
-                for (int c = 0; c <= 1; ++c)
-                    System.out.println(a + "\t" + b + "\t" + c + "\t" + ((a | b ^ c) | a) + "\n");
         Scanner scanner = new Scanner(System.in);
-        scanner.nextLine();
+        int[] mas = new int[10];
+        int i, a;
+
+        System.out.println("введите массив");
+        a = 0;
+        for (i = 0; i < 10; i++) {
+            mas[i] = scanner.nextInt();
+            if ((i + 1) % 2 == 0 && mas[i] < 0) {
+                a++;
+            }
+        }
+        System.out.println("ответ " + a);
+
+        System.out.println("введите массив");
+        for (i = 0; i < 10; i++) {
+            mas[i] = scanner.nextInt();
+        }
+        i = 0;
+        while (mas[i] != 0 && i < 10) {
+            i++;
+        }
+        int k = 1;
+        if (i < 10) {
+            for (a = i; a < 10; a++) {
+                k *= mas[a];
+            }
+            System.out.println(k);
+        } else {
+            System.out.println("нуля нет");
+        }
     }
 }
