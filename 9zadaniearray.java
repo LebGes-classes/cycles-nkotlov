@@ -12,7 +12,7 @@ public class Main {
             mas[i] = scanner.nextInt();
             if ((i + 1) % 2 == 0 && mas[i] < 0) {
                 a++;
-            }
+            }9
         }
         System.out.println("ответ " + a);
 
